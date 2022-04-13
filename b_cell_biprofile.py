@@ -3,8 +3,8 @@ import numpy as np
 import pandas as pd
 from sklearn import metrics
 
-train_data = pd.read_csv('Second_Dataset/train_set.csv')
-test_data = pd.read_csv('Second_Dataset/test_set.csv')
+train_data = pd.read_csv('Dataset/train_set.csv')
+test_data = pd.read_csv('Dataset/test_set.csv')
 print('Training Set:\n', train_data.head())
 print('Testing Set:\n', test_data.head())
 
@@ -22,7 +22,8 @@ clf.fit(x_train, y_train)
 ans = clf.predict(x_test)
 #print('Predicted Labels:\n', ans)
 
-print("The accuracy of SVM with RBF kernel is: ", metrics.accuracy_score(ans, y_test)*100, '\n')
+print("The accuracy of SVM with RBF kernel is: ",
+      metrics.accuracy_score(ans, y_test)*100, '\n')
 
 
 cm1 = metrics.confusion_matrix(y_test, ans)
